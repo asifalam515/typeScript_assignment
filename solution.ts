@@ -58,7 +58,7 @@ const printBookDetails = (book: Book): void => {
   );
 };
 const getUniqueValues = <T>(arr1: T[], arr2: T[]): T[] => {
-  let uniqueArray = [];
+  let uniqueArray: T[] = [];
   for (let i = 0; i < arr1.length; i++) {
     uniqueArray.push(arr1[i]);
   }
