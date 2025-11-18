@@ -39,7 +39,7 @@ class Person {
 }
 type TItem = { title: string; rating: number };
 const filterByRating = (arr: TItem[]): TItem[] => {
-  return arr.filter((item) => item.rating >= 4);
+  return arr.filter((item) => item.rating >= 4 && item.rating <= 5);
 };
 type TUser = { id: number; name: string; email: string; isActive: boolean };
 const filterActiveUsers = (arr: TUser[]): TUser[] => {
@@ -83,7 +83,7 @@ type TProduct = {
   quantity: number;
   discount?: number;
 };
-const calculateTotalPrice = (arr: TProduct[]) => {
+const calculateTotalPrice = (arr: TProduct[]): number => {
   const total = arr.reduce((totalPrice, currentProduct) => {
     let subTotal = currentProduct.price * currentProduct.quantity;
     if (currentProduct.discount) {
